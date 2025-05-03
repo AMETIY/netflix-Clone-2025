@@ -1,22 +1,22 @@
-import React from 'react'
-import './Header.css'
-import NetflixLogo from '../../assets/images/netflixLogo.png'
-import SearchIcon from '@mui/icons-material/Search';
-import NotificationsIcon from '@mui/icons-material/Notifications';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import AccountBoxIcon from '@mui/icons-material/AccountBox';
-
+import React from "react";
+import "./Header.css";
+import NetflixLogo from "../../assets/images/netflixLogo.png";
+import SearchIcon from "@mui/icons-material/Search";
+import NotificationsIcon from "@mui/icons-material/Notifications";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import AccountBoxIcon from "@mui/icons-material/AccountBox";
+import { Navbar, Container, Nav } from "react-bootstrap";
 
 const Header = () => {
   return (
     <>
-<div className="header_outer_container">
-      <div className="header-container">
+      <div className=" fixed-top">
+        {/* <div className="header-container">
         <div className="header_left">
           <ul>
-            <li>
+            <Navbar.Brand>
               <img src={NetflixLogo} alt="Netflix logo" width="100" />
-            </li>
+            </Navbar.Brand>
         
             <li>Home</li>
             <li>Tv Shows</li>
@@ -36,13 +36,92 @@ const Header = () => {
             
           </ul>
         </div>
+      </div> */}
+        <Navbar expand="lg" className="bg-black">
+        <Container fluid>
+          <Navbar.Brand href="#">
+            <img src={NetflixLogo} alt="Netflix logo" width="100" />
+          </Navbar.Brand>
+
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+
+          <Navbar.Collapse id="basic-navbar-nav">
+            <div className="d-flex justify-content-between w-100 align-items-center">
+              {/* Left Nav */}
+              <Nav className="gap-3">
+                <Nav.Link href="#">Home</Nav.Link>
+                <Nav.Link href="#">Tv Shows</Nav.Link>
+                <Nav.Link href="#">Movies</Nav.Link>
+                <Nav.Link href="#">Latest</Nav.Link>
+                <Nav.Link href="#">My List</Nav.Link>
+                <Nav.Link href="#">Browse by Languages</Nav.Link>
+              </Nav>
+
+              {/* Right Icons */}
+              <Nav className="gap-3 header-icons">
+                <Nav.Link href="#"><SearchIcon /></Nav.Link>
+                <Nav.Link href="#"><NotificationsIcon /></Nav.Link>
+                <Nav.Link href="#"><AccountBoxIcon /></Nav.Link>
+                <Nav.Link href="#"><ArrowDropDownIcon /></Nav.Link>
+              </Nav>
+            </div>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
       </div>
-    </div>
     </>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
 
 
+// import React from "react";
+// import "./Header.css";
+// import NetflixLogo from "../../assets/images/netflixLogo.png";
+// import SearchIcon from "@mui/icons-material/Search";
+// import NotificationsIcon from "@mui/icons-material/Notifications";
+// import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+// import AccountBoxIcon from "@mui/icons-material/AccountBox";
+// import { Navbar, Container, Nav } from "react-bootstrap";
+// import { NavLink } from "react-router-dom";
 
+// const Header = () => {
+//   return (
+//     <div className="fixed-top">
+//       <Navbar expand="lg" className="bg-black">
+//         <Container fluid>
+//           <Navbar.Brand href="/">
+//             <img src={NetflixLogo} alt="Netflix logo" width="100" />
+//           </Navbar.Brand>
+
+//           <Navbar.Toggle aria-controls="basic-navbar-nav" />
+
+//           <Navbar.Collapse id="basic-navbar-nav">
+//             <div className="d-flex justify-content-between w-100 align-items-center">
+//               {/* Left Nav */}
+//               <Nav className="gap-3">
+//                 <NavLink to="/" className="nav-link">Home</NavLink>
+//                 <NavLink to="/tv" className="nav-link">Tv Shows</NavLink>
+//                 <NavLink to="/movies" className="nav-link">Movies</NavLink>
+//                 <NavLink to="/latest" className="nav-link">Latest</NavLink>
+//                 <NavLink to="/my-list" className="nav-link">My List</NavLink>
+//                 <NavLink to="/languages" className="nav-link">Browse by Languages</NavLink>
+//               </Nav>
+
+//               {/* Right Icons */}
+//               <Nav className="gap-3 header-icons">
+//                 <NavLink to="#" className="nav-link"><SearchIcon /></NavLink>
+//                 <NavLink to="#" className="nav-link"><NotificationsIcon /></NavLink>
+//                 <NavLink to="#" className="nav-link"><AccountBoxIcon /></NavLink>
+//                 <NavLink to="#" className="nav-link"><ArrowDropDownIcon /></NavLink>
+//               </Nav>
+//             </div>
+//           </Navbar.Collapse>
+//         </Container>
+//       </Navbar>
+//     </div>
+//   );
+// };
+
+// export default Header;
