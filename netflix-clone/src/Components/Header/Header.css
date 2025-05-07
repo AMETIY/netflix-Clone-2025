@@ -15,3 +15,31 @@
   padding: 0.25rem;
   font-size: 1.3rem;
 }
+
+
+.nav-button {
+  font-size: 0.9rem;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.nav-button:hover {
+  background-color: #e50914;
+  color: white;
+  border-color: #e50914;
+}
+
+/* Responsive tweaks (optional for extra polish) */
+@media (max-width: 768px) {
+  .nav-button {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .header-icons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
