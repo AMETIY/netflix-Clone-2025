@@ -8,5 +8,5 @@ export default defineConfig({
     port: 3000,
     strictPort: true,
   },
-  base: env.VITE_BASE_PATH || '/Netflix-Clone-2025',
+  base: process.env.VITE_BASE_PATH || '/netflix-Clone-2025',
 })
