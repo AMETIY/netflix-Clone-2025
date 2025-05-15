@@ -20,7 +20,7 @@ const Banner = () => {
       setSingleMovie(randomMovie);
       setLoading(false);
     } catch (err) {
-      console.info("Error", err.message);
+      // console.info("Error", err.message);
       setError(err.message);
       setLoading(false);
     }
