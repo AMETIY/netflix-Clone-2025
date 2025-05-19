@@ -66,7 +66,7 @@ cd netflix-clone
 
 ---
 
-### 📌 Notes
+### 📌 Note
 
 This is a practice project built to learn full-stack integration and improve React + Node.js skills.
 
