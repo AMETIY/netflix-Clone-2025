@@ -63,6 +63,7 @@ cd netflix-clone
 - The Movie Database (TMDB) for providing the API
 - Netflix for the inspiration
 - React and other open-source libraries used in this project
+- My Group Mates and Instructors
 
 ---
 
