@@ -9,7 +9,7 @@ const Footer = () => {
   const [isopenIndex, setIsOpenIndex] = useState(null);
 
   const toggleDropDown = (index) => {
-    setIsOpenIndex((prevIndex) => (prevIndex === index ? null : index));
+    setIsOpenIndex((prev) => (prev === index ? null : index));
   };
 
   return (
