@@ -18,7 +18,7 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
 
     if (!fetchUrl) {
       console.error('fetchUrl is missing');
-      setError('fetUrl Nor Provided');
+      setError('fetUrl Not Provided');
       setLoading(false);
       return;
     }
