@@ -17,7 +17,7 @@ const Header = () => {
             <img src={NetflixLogo} alt="Netflix logo" width="100" />
           </Navbar.Brand>
 
-          <Navbar.Toggle className="var" aria-controls="navbarScroll" />
+          <Navbar.Toggle className="var custom-toggle" aria-controls="navbarScroll" />
 
           <Navbar.Collapse id="navbarScroll">
             <div className="d-flex justify-content-between w-100 align-items-center">
