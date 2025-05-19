@@ -22,7 +22,7 @@ const Header = () => {
           <Navbar.Collapse id="navbarScroll">
             <div className="d-flex justify-content-between w-100 align-items-center">
               {/* Left Nav */}
-              <Nav className="gap-3 " style={{ maxHeight: '100px' }}  navbarScroll>
+              <Nav className="gap-3 "   >
                 <Nav.Link href="#">Home</Nav.Link>
                 <Nav.Link href="#">Tv Shows</Nav.Link>
                 <Nav.Link href="#">Movies</Nav.Link>
@@ -41,8 +41,8 @@ const Header = () => {
               <NavDropdown.Item href="#action/3.2">Amharic</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
               </NavDropdown>
-              </Nav>
       <Button className="nav-button" variant="outline-danger">Logout</Button>
+              </Nav>
             </div>
           </Navbar.Collapse>
         </Container>

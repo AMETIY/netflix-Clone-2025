@@ -9,12 +9,12 @@
   color: #e50914 !important; /* Netflix red */
 }
 
-.header-icons .nav-link {
+/* .header-icons .nav-link {
   display: flex;
   align-items: center;
   padding: 0.25rem;
   font-size: 1.3rem;
-}
+} */
 
 
 .nav-button {
@@ -23,6 +23,7 @@
   border-radius: 20px;
   font-weight: 600;
   transition: background 0.3s ease, color 0.3s ease;
+  /* max-width: 15%; */
 }
 
 .nav-button:hover {
@@ -38,6 +39,8 @@
 .custom-toggle .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'><path stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/></svg>");
 }
+
+
 
 /* Responsive tweaks (optional for extra polish) */
 @media (max-width: 768px) {

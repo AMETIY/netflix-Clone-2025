@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import instance from "../../../utils/axios";
 import "./Row.css";
 import { Container, Spinner, Alert } from "react-bootstrap";
@@ -10,6 +10,7 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [trailerUrl, setTrailerUrl] = useState("");
+  //  const trailerRef = useRef();
 
   const image_base_url = "https://image.tmdb.org/t/p/original/";
 
@@ -82,6 +83,14 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
     fetchMovies();
   }, [fetchUrl]);
 
+
+   // Close trailer when clicking outside
+  const handleOverlayClick = (e) => {
+    if (e.target.classList.contains("trailer-overlay")) {
+      setTrailerUrl("");
+    }
+  };
+
   // console.log(movies)
 
   return (
@@ -114,9 +123,16 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
         )}
       </div>
 
-      {trailerUrl && !error && !loading && (
+      {/* {trailerUrl && !error && !loading && (
         <div style={{ padding: "40px" }}>
           <Youtube videoId={trailerUrl} opts={opts} />
+        </div>
+      )} */}
+      {trailerUrl && !error && !loading && (
+        <div className="trailer-overlay" onClick={handleOverlayClick}>
+          <div className="trailer-popup" >
+            <Youtube videoId={trailerUrl} opts={opts} />
+          </div>
         </div>
       )}
     </div>
