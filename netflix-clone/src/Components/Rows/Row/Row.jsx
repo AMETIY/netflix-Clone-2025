@@ -15,10 +15,9 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
   const image_base_url = "https://image.tmdb.org/t/p/original/";
 
   const fetchMovies = async () => {
-
     if (!fetchUrl) {
-      console.error('fetchUrl is missing');
-      setError('fetUrl Not Provided');
+      console.error("fetchUrl is missing");
+      setError("fetUrl Not Provided");
       setLoading(false);
       return;
     }
@@ -83,8 +82,7 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
     fetchMovies();
   }, [fetchUrl]);
 
-
-   // Close trailer when clicking outside
+  // Close trailer when clicking outside
   const handleOverlayClick = (e) => {
     if (e.target.classList.contains("trailer-overlay")) {
       setTrailerUrl("");
@@ -101,23 +99,27 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
         {loading ? (
           <div className="col-12">
             <Spinner className="loading-text" />
-              <p>🎥 Loading image... Please wait!</p>
-            
+            <p>🎥 Loading image... Please wait!</p>
           </div>
         ) : error ? (
           <Alert variant="danger">🚨 Error: {error}</Alert>
         ) : movies.length > 0 ? (
-          movies?.map((movie, index) => (
-            <img
-              onClick={() => handleClick(movie)}
-              key={movie.id || index}
-              src={`${image_base_url}${
-                isLargeRow ? movie?.poster_path : movie?.backdrop_path
-              }`}
-              alt={movie.name || "Movie"}
-              className={`row__poster ${isLargeRow && "row__posterLarge"}`}
-            />
-          ))
+        
+          movies?.map((movie, index) => {
+            const imagePath = isLargeRow? movie?.poster_path : movie?.backdrop_path;
+
+            if (!imagePath) return null; // Skip movies without images
+
+            return (
+              <img
+                onClick={() => handleClick(movie)}
+                key={movie.id || index}
+                src={`${image_base_url}${imagePath}`}
+                alt={movie.name || "Movie"}
+                className={`row__poster ${isLargeRow && "row__posterLarge"}`}
+              />
+            );
+          })
         ) : (
           <div className="no-videos-found">🚫 No Videos Found</div>
         )}
@@ -130,7 +132,7 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
       )} */}
       {trailerUrl && !error && !loading && (
         <div className="trailer-overlay" onClick={handleOverlayClick}>
-          <div className="trailer-popup" >
+          <div className="trailer-popup">
             <Youtube videoId={trailerUrl} opts={opts} />
           </div>
         </div>
