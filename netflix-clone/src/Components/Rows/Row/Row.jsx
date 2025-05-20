@@ -24,8 +24,7 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
 
     try {
       const request = await instance.get(fetchUrl);
-      // console.log(fetchUrl);
-      // console.log(request);
+      
       const data = request.data?.results;
       setMovies(data || []);
     } catch (err) {
@@ -89,7 +88,7 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
     }
   };
 
-  // console.log(movies)
+  
 
   return (
     <div className="row">

@@ -12,15 +12,15 @@ const Banner = () => {
   const fetchNetflixOriginals = async () => {
     try {
       const request = await instance.get(requests.fetchNetflixOriginals);
-      //   console.log(request)
+      
       const data = request.data?.results;
-      //   console.log(data)
+      
       const randomMovie = data[Math.floor(Math.random() * data.length)];
-      //   console.log(randomMovie)
+      
       setSingleMovie(randomMovie);
       setLoading(false);
     } catch (err) {
-      // console.info("Error", err.message);
+      
       setError(err.message);
       setLoading(false);
     }
@@ -36,7 +36,7 @@ const Banner = () => {
       : text;
   };
 
-  // console.log(singleMovie);
+  
 
   return (
     <header
