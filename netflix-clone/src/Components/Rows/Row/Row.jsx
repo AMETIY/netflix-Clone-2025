@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import instance from "../../../utils/axios";
 import "./Row.css";
-import { Container, Spinner, Alert } from "react-bootstrap";
+import {  Spinner, Alert } from "react-bootstrap";
 import movieTrailer from "movie-trailer";
 import Youtube from "react-youtube";
 
